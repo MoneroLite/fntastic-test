@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./layout.module.scss";
+import { ServerList } from "../index";
 
 interface IMainLayout {
   children: React.ReactNode;
@@ -8,7 +8,9 @@ interface IMainLayout {
 export const MainLayout = ({ children }: IMainLayout) => {
   return (
     <div className="flex w-screen h-screen">
-      <div className="h-full w-20 bg-slate-700">sdsd</div>
+      <div className="h-full w-20 bg-slate-700">
+        <ServerList />
+      </div>
       <div className="w-full h-full">{children}</div>
     </div>
   );
