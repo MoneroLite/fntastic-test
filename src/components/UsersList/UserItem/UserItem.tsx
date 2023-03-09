@@ -11,7 +11,10 @@ interface IUserItem {
 
 const UserItem = (props: IUserItem) => {
   return (
-    <div className="flex items-center">
+    <div
+      onClick={() => alert(`Клик по пользователю ${props.name}`)}
+      className="flex items-center mb-2 hover:bg-neutral-700 rounded-md cursor-pointer"
+    >
       <div className="bg-gray-700 mr-3 w-12 relative rounded-full">
         <img className="w-full rounded-full" src={avatarmock} alt="" />
         <div className="w-4 h-4 bg-red-800 rounded-full absolute right-0.5 bottom-0.5 border-2 border-gray-700"></div>
@@ -26,7 +29,7 @@ const UserItem = (props: IUserItem) => {
           )}
         </p>
         {props.description ? (
-          <p className="text-sm text-slate-700">{props.description}</p>
+          <p className="text-sm text-neutral-500">{props.description}</p>
         ) : (
           ""
         )}

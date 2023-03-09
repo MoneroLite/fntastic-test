@@ -48,14 +48,14 @@ export const UsersList = () => {
   ];
 
   return (
-    <div>
+    <div className="ml-5 pt-2">
       {data.map((item) => (
-        <div>
-          <p>
+        <div className="mb-5" key={item.group}>
+          <p className="mb-4 text-gray-400 font-bold">
             {item.group} - <span>{item.users.length}</span>
           </p>
           {item?.users.map((user) => (
-            <UserItem {...user} />
+            <UserItem key={user.id} {...user} />
           ))}
         </div>
       ))}
